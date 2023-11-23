@@ -59,6 +59,19 @@
             margin: 5px;
             background-color: lightpink;
         }
+
+        .sim1-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .question,
+        .btn,
+        input,
+        label,
+        #result2 {
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -114,6 +127,36 @@
             </div>
 
         </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <img class="sim1-image" src="./images/sim1-image.png" alt="" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="question"> In the square pyramid given above, calculate the area of the section cut by the
+                    plane at a distance one third from the top of the square pyramid. The 8 * 8 square grids are given
+                    representing the top and side views of the shape respectively. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="optionsForm">
+                    <label for="answer">Answer:</label><br>
+                    <input type="text" id="answer" name="answer" placeholder="Enter your answer" autocomplete="off">
+                    square
+                    units<br>
+                    <button type="button" class="btn btn-outline-success mt-3" onclick="checkAnswer()">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <p id="result2"> </p>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
 
@@ -136,6 +179,7 @@
 
             if (isCorrect) {
                 resultElement.textContent = "Good Job !";
+                resultElement.style.color = "green";
                 setTimeout(() => {
                     // Clear the result message after a delay
                     resultElement.textContent = "";
@@ -144,6 +188,7 @@
                 }, 2000);
             } else {
                 resultElement.textContent = "Incorrect . Please choose the correct image.";
+                resultElement.style.color = "red";
             }
 
         }
@@ -167,9 +212,35 @@
                 document.getElementById(sampleIds[currentSampleIndex]).classList.add('selected');
             } else {
                 resultElement.textContent = "You have completed successfully.";
+                resultElement.style.color = "green";
             }
         }
 
+
+
+
+
+        //  for question javascript
+        function checkAnswer() {
+            // Get the user's input
+            var userInput = document.getElementById("answer").value;
+
+            // Check if the input is a numeric value
+            if (!/^\d+$/.test(userInput)) {
+                document.getElementById("result2").innerHTML = "Please enter a numeric value.";
+                document.getElementById("result2").style.color = "red";
+                return;
+            }
+
+            // Check if the numeric value is correct (4000)
+            if (parseInt(userInput) === 4) {
+                document.getElementById("result2").innerHTML = "Correct!";
+                document.getElementById("result2").style.color = "green";
+            } else {
+                document.getElementById("result2").innerHTML = "Wrong answer. Try again.";
+                document.getElementById("result2").style.color = "red";
+            }
+        }
     </script>
 
 </body>
