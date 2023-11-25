@@ -110,22 +110,16 @@
         </div>
         <div class="row">
             <span class="main-title"> Section cuts after using Plane Probe (Top View)</span>
-            <div class="col-md-2  ">
-                <img class="microstructure-images" id="top2" src="./images/square.png" alt="" />
-            </div>
-            <div class="col-md-2  ">
-                <img class="microstructure-images" id="top1" src="./images/circle.png" alt="" />
+            <div class="col-md-3  ">
+                <img class="microstructure-images" id="tsquare" src="./images/square.png" alt="" />
             </div>
 
-            <div class="col-md-2  ">
-                <img class="microstructure-images" id="top4" src="./images/circle.png" alt="" />
+            <div class="col-md-3  ">
+                <img class="microstructure-images" id="tcircle" src="./images/circle.png" alt="" />
             </div>
 
-            <div class="col-md-2  ">
-                <img class="microstructure-images" id="top3" src="./images/square.png" alt="" />
-            </div>
-            <div class="col-md-2  ">
-                <img class="microstructure-images" id="top5" src="./images/rectange-width.png" alt="" />
+            <div class="col-md-3  ">
+                <img class="microstructure-images" id="rectangle-width" src="./images/rectange-width.png" alt="" />
             </div>
 
 
@@ -134,20 +128,14 @@
 
         <div class="row">
             <span class="main-title">Section cuts after using Plane Probe (Side View)</span>
-            <div class="col-md-2   ">
-                <img class="sample-rotation" id="side3" src="./images/triangle.png" alt="" />
+            <div class="col-md-3   ">
+                <img class="sample-rotation" id="triangle" src="./images/triangle.png" alt="" />
             </div>
-            <div class="col-md-2   ">
-                <img class="sample-rotation" id="side2" src="./images/square.png" alt="" />
+            <div class="col-md-3   ">
+                <img class="sample-rotation" id="square" src="./images/square.png" alt="" />
             </div>
-            <div class="col-md-2   ">
-                <img class="sample-rotation" id="side4" src="./images/rectangle-long.png" alt="" />
-            </div>
-            <div class="col-md-2  ">
-                <img class="sample-rotation" id="side1" src="./images/triangle.png" alt="" />
-            </div>
-            <div class="col-md-2   ">
-                <img class="sample-rotation" id="side5" src="./images/square.png" alt="" />
+            <div class="col-md-3   ">
+                <img class="sample-rotation" id="rectangle-long" src="./images/rectangle-long.png" alt="" />
             </div>
         </div>
     </div>
@@ -237,11 +225,11 @@
     <script>
 
         const correctMatches = {
-            '3d1': { microstructure: 'top1', sample: 'side1' },
-            '3d2': { microstructure: 'top2', sample: 'side2' },
-            '3d3': { microstructure: 'top3', sample: 'side3' },
-            '3d4': { microstructure: 'top4', sample: 'side4' },
-            '3d5': { microstructure: 'top5', sample: 'side5' }
+            '3d1': { microstructure: 'tcircle', sample: 'triangle' },
+            '3d2': { microstructure: 'tsquare', sample: 'square' },
+            '3d3': { microstructure: 'tsquare', sample: 'triangle' },
+            '3d4': { microstructure: 'tcircle', sample: 'rectangle-long' },
+            '3d5': { microstructure: 'rectangle-width', sample: 'square' }
         };
 
         // Define your typeOrder array based on your requirements
