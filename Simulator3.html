@@ -36,6 +36,9 @@
 
         .object {
             margin: 15px;
+            margin: 15px;
+            width: 100%;
+            height: auto;
         }
 
         #result {
@@ -62,11 +65,9 @@
             <div class="col-md-6">
                 <div class="image-container">
                     <!-- question -->
-                    <img class="object " id="lineprobe" src="./images/1.JPG" alt="" />
-                    <img class="object " id="pointprobe" src="./images/2.JPG" alt=""
-                        style="display: none;" />
-                    <img class="object " id="planeprobe" src="./images/3.JPG" alt=""
-                        style="display: none;" />
+                    <img class="object " id="pointprobe" src="./images/1.JPG" alt="" />
+                    <img class="object " id="lineprobe" src="./images/2.JPG" alt="" style="display: none;" />
+                    <img class="object " id="planeprobe" src="./images/3.JPG" alt="" style="display: none;" />
                 </div>
             </div>
 
@@ -87,8 +88,8 @@
 
     <script>
         // Array of sample ids in the order they should appear
-        const objectsId = ["lineprobe", "pointprobe", "planeprobe"];
-        const correctOption = ["line", "point", "plane"];
+        const objectsId = ["pointprobe", "lineprobe", "planeprobe"];
+        const correctOption = ["point", "line", "plane"];
 
         var currentObjectIndex = 0;
         var resultElement = document.getElementById("result");
@@ -123,21 +124,21 @@
         }
 
         function moveToNextObject() {
-        // Increment the object index
-        currentObjectIndex++;
+            // Increment the object index
+            currentObjectIndex++;
 
-        // Check if there are more objects
-        if (currentObjectIndex < objectsId.length) {
-            // hide the previous image which has been answered
-            document.getElementById(objectsId[currentObjectIndex - 1]).style.display = "none";
-            // show the next image
-            document.getElementById(objectsId[currentObjectIndex]).style.display = "block";
-        } else {
-            // Display completion message without hiding the last image
-            resultElement.textContent = "You have completed successfully.";
-            resultElement.style.color = "green";
+            // Check if there are more objects
+            if (currentObjectIndex < objectsId.length) {
+                // hide the previous image which has been answered
+                document.getElementById(objectsId[currentObjectIndex - 1]).style.display = "none";
+                // show the next image
+                document.getElementById(objectsId[currentObjectIndex]).style.display = "block";
+            } else {
+                // Display completion message without hiding the last image
+                resultElement.textContent = "You have completed successfully.";
+                resultElement.style.color = "green";
+            }
         }
-    }
     </script>
 </body>
 
